@@ -17,7 +17,8 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = PixelmonElo.MODID, name = PixelmonElo.NAME, version = PixelmonElo.VERSION, dependencies = PixelmonElo.DEPENDENCIES)
 public class PixelmonElo
 {
-    Events events = new Events();
+    Events events = new Events(this);
+    Scoreboard scoreboard = new Scoreboard(events, this);
     public static final String MODID = "pixelmonelo";
     public static final String NAME = "Pixelmon Elo";
     public static final String VERSION = "1.0";

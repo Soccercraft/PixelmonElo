@@ -11,7 +11,6 @@ import ibxm.Player;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
@@ -23,8 +22,16 @@ import java.util.UUID;
 
 public class Events {
 
+    private PixelmonElo pixelmonElo;
+
+
     HashMap<UUID, Integer> wins = new HashMap<UUID, Integer>();
     HashMap<UUID, Integer> losses = new HashMap<UUID, Integer>();
+
+    public Events(PixelmonElo pixelmonElo) {
+        this.pixelmonElo = pixelmonElo;
+    }
+
 
     public HashMap<UUID, Integer> getLosses() {
         return losses;

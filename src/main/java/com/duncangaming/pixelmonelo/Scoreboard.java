@@ -13,7 +13,16 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 public class Scoreboard {
 
-    Events events = new Events();
+
+    private PixelmonElo pixelmonElo;
+    private Events events;
+
+
+    public Scoreboard(Events events, PixelmonElo pixelmonElo) {
+        this.pixelmonElo = pixelmonElo;
+        this.events  = events;
+    }
+
 
     @SubscribeEvent
     public void join(PlayerEvent.PlayerLoggedInEvent e) {
